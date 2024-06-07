@@ -46,7 +46,7 @@ div {
 		<div class="index">index</div>
 		<div class="btns">
 			<div>
-				<button onclick="location.href='inputform.html'">input</button>
+				<button onclick="location.href='inputform.jsp'">input</button>
 			</div>
 			<div>
 				<button onclick="location.href='output.movie'">output</button>
