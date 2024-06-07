@@ -31,6 +31,7 @@ public class MovieController extends HttpServlet {
 				String genre = request.getParameter("genre");
 				System.out.println(genre);
 				int result = dao.insert(new MovieDTO(0, title, genre));
+				System.out.println(result);
 				response.sendRedirect("index.jsp");
 
 			} else if (cmd.equals("/output.movie")) {
