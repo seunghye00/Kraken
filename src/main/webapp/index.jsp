@@ -52,7 +52,6 @@ div {
 				<button onclick="location.href='output.movie'">output</button>
 			</div>
 		</div>
-
 	</div>
 </body>
 </html>
