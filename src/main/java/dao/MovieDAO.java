@@ -80,6 +80,7 @@ public class MovieDAO {
 				String genre = rs.getString(3);
 				list.add(new MovieDTO(id, title, genre));
 			}
+			System.out.println("123");
 			return list;
 		}
 	}
