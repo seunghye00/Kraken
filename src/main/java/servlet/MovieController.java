@@ -25,22 +25,20 @@ public class MovieController extends HttpServlet {
 		String cmd = request.getRequestURI();
 		MovieDAO dao = MovieDAO.getInstance();
 
-		try{
-			
-		
-		if (cmd.equals("/input.movie")) {
-			String title = request.getParameter("title");
-			String genre = request.getParameter("genre");
-			int result = dao.insert(new MovieDTO(0, title, genre));
-			response.sendRedirect("index.jsp");
-			
-		} else if (cmd.equals("/output.movie")) {
-			List<MovieDTO> list = dao.selectAll();
-			request.setAttribute("list", list);
-			request.getRequestDispatcher("output.jsp").forward(request, response);
-		}
+		try {
+			if (cmd.equals("/input.movie")) {
+				String title = request.getParameter("title");
+				String genre = request.getParameter("genre");
+				System.out.println(genre);
+				int result = dao.insert(new MovieDTO(0, title, genre));
+				response.sendRedirect("index.jsp");
 
-	} catch (Exception e){
+			} else if (cmd.equals("/output.movie")) {
+				List<MovieDTO> list = dao.selectAll();
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("output.jsp").forward(request, response);
+			}
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -49,5 +47,4 @@ public class MovieController extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }
