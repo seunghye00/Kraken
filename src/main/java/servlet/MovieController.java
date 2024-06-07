@@ -36,7 +36,6 @@ public class MovieController extends HttpServlet {
 			List<MovieDTO> list = dao.selectAll();
 			request.setAttribute("list", list);
 			request.getRequestDispatcher("outputview.jsp").forward(request, response);
-			아니이거뭔데
 			
 
 		}
