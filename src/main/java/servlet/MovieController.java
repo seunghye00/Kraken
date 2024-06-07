@@ -24,27 +24,24 @@ public class MovieController extends HttpServlet {
 			throws ServletException, IOException {
 		String cmd = request.getRequestURI();
 		MovieDAO dao = MovieDAO.getInstance();
-		try{
-			
-		
-		if (cmd.equals("/input.movie")) {
-			String title = request.getParameter("");
-			String name = request.getParameter("");
-			response.sendRedirect("index.jsp");
-			
-		} else if (cmd.equals("/output.jsp")) {
-			List<MovieDTO> list = dao.selectAll();
-			request.setAttribute("list", list);
-			request.getRequestDispatcher("outputview.jsp").forward(request, response);
-			아니이거뭔데
-			
+
+		try {
+
+			if (cmd.equals("/input.movie")) {
+				String title = request.getParameter("");
+				System.out.println(title);
+				String name = request.getParameter("");
+				System.out.println(name);
+				response.sendRedirect("index.jsp");
+
+			} else if (cmd.equals("/output.movie")) {
+				List<MovieDTO> list = dao.selectAll();
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+			}
+		} catch (Exception e) {
 
 		}
-	}
-		catch (Exception e) {
-			
-		}
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
