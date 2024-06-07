@@ -9,6 +9,6 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
-이번에도 안가려나?
+이번에도 안가려나? 아니 도착했지롱
 </body>
 </html>
