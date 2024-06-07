@@ -24,6 +24,21 @@ public class MovieController extends HttpServlet {
 			throws ServletException, IOException {
 		String cmd = request.getRequestURI();
 		MovieDAO dao = MovieDAO.getInstance();
+<<<<<<< HEAD
+		try {
+
+			if (cmd.equals("/input.movie")) {
+				String title = request.getParameter("");
+				String name = request.getParameter("");
+				response.sendRedirect("index.jsp");
+
+			} else if (cmd.equals("/output.movie")) {
+				List<MovieDTO> list = dao.selectAll();
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+			}
+		} catch (Exception e) {
+=======
 		try{
 			
 		
@@ -37,13 +52,10 @@ public class MovieController extends HttpServlet {
 			request.setAttribute("list", list);
 			request.getRequestDispatcher("outputview.jsp").forward(request, response);
 			
+>>>>>>> 84d7db17c5927ab7ca38b47fd439820ca774fda7
 
 		}
-	}
-		catch (Exception e) {
-			
-		}
-		
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
