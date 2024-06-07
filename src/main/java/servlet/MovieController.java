@@ -25,11 +25,21 @@ public class MovieController extends HttpServlet {
 		String cmd = request.getRequestURI();
 		MovieDAO dao = MovieDAO.getInstance();
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+>>>>>>> a189d8c12e3c0957be0170b883d4fb460c83a59e
 		try {
 
 			if (cmd.equals("/input.movie")) {
 				String title = request.getParameter("");
+<<<<<<< HEAD
+				System.out.println(title);
 				String name = request.getParameter("");
+				System.out.println(name);
+=======
+				String name = request.getParameter("");
+>>>>>>> a189d8c12e3c0957be0170b883d4fb460c83a59e
 				response.sendRedirect("index.jsp");
 
 			} else if (cmd.equals("/output.movie")) {
@@ -38,6 +48,10 @@ public class MovieController extends HttpServlet {
 				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 		} catch (Exception e) {
+<<<<<<< HEAD
+
+		}
+=======
 =======
 		try{
 			
@@ -56,6 +70,7 @@ public class MovieController extends HttpServlet {
 
 		}
 
+>>>>>>> a189d8c12e3c0957be0170b883d4fb460c83a59e
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
