@@ -29,14 +29,15 @@ public class MovieController extends HttpServlet {
 			
 		
 		if (cmd.equals("/input.movie")) {
-			String title = request.getParameter("");
-			String name = request.getParameter("");
+			String title = request.getParameter("title");
+			String genre = request.getParameter("genre");
+			int result = dao.insert(new MovieDTO(0, title, genre));
 			response.sendRedirect("index.jsp");
 			
-		} else if (cmd.equals("/output.jsp")) {
+		} else if (cmd.equals("/output.movie")) {
 			List<MovieDTO> list = dao.selectAll();
 			request.setAttribute("list", list);
-			request.getRequestDispatcher("outputview.jsp").forward(request, response);
+			request.getRequestDispatcher("output.jsp").forward(request, response);
 		}
 
 	} catch (Exception e){
